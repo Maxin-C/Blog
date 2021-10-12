@@ -1,0 +1,247 @@
+/*
+来源：https://www.cnblogs.com/liangxiaofeng/p/5936760.html
+作用：绘制基本的几何图形
+*/
+
+/*
+圆形
+圆形在设置CSS时要设置宽度和高度相等，然后设置border-radius属性为宽度或高度的一半即可
+*/
+#circle {
+    width: 20px;
+    height: 20px;
+    background: black;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 10px;
+}
+
+/*
+正方形
+*/
+#square {
+    width: 120px;
+    height: 120px;
+    background: #f447ff;
+}
+
+/*
+长方形
+*/
+#rectangle {
+    width: 220px;
+    height: 120px;
+    background: #4da1f7;
+}
+
+/*
+椭圆
+设置椭圆形的CSS时，高度要设置为宽度的一半，border-radius属性也要做相应的改变
+*/
+#oval {
+    width: 200px;
+    height: 100px;
+    background: #e9337c;
+    -webkit-border-radius: 100px / 50px;
+    -moz-border-radius: 100px / 50px;
+    border-radius: 100px / 50px;
+}
+
+/*
+三角形
+要创建一个CSS三角形，需要使用border，通过设置不同边的透明效果，我们可以制作出三角形的现状。另外，在制作三角形时，宽度和高度要设置为0
+*/
+#triangle {
+    width: 0;
+    height: 0;
+    border-bottom: 140px solid #fcf921;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+}
+
+/*
+倒三角形
+与正三角形不同的是，倒三角形要设置的是border-top、border-left和border-right三条边的属性
+*/
+#re-triangle {
+    width: 0;
+    height: 0;
+    border-top: 140px solid #20a3bf;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+}
+
+/*
+左三角形
+左三角形操作的是border-top、border-left和border-right三条边的属性，其中上边和下边要设置透明属性。
+*/
+#triangle_left {
+    width: 0;
+    height: 0;
+    border-top: 70px solid transparent;
+    border-right: 140px solid #6bbf20;
+    border-bottom: 70px solid transparent;
+}
+
+/*
+菱形
+制作菱形的方法有很多种。这里使用的是transform属性和rotate相结合，使两个正反三角形上下显示。
+*/
+#diamond {
+    width: 120px;
+    height: 120px;
+    background: #1eff00;
+    /* Rotate */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    /* Rotate Origin */
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    margin: 60px 0 10px 310px;
+}
+
+
+/*
+梯形
+梯形是三角形的一个变体，设置CSS梯形时，左右两条边设置为相等，并且给它设置一个宽度。
+*/
+#trapezium {
+    height: 0;
+    width: 120px;
+    border-bottom: 120px solid #ec3504;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+}
+
+/*
+平行四边形
+平行四边形的制作方式是使用transform属性使长方形倾斜一个角度。
+*/
+#parallelogram {
+    width: 160px;
+    height: 100px;
+    background: #8734f7;
+    -webkit-transform: skew(30deg);
+    -moz-transform: skew(30deg);
+    -o-transform: skew(30deg);
+    transform: skew(30deg);
+}
+
+/*
+星形
+星形的HTML结构同样使用一个带ID的空div。星形的实现方式比较复杂，主要是使用transform属性来旋转不同的边。仔细体会下面的代码。
+*/
+#star {
+    width: 0;
+    height: 0;
+    margin: 50px 0;
+    color: #fc2e5a;
+    position: relative;
+    display: block;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid #fc2e5a;
+    border-left: 100px solid transparent;
+    -moz-transform: rotate(35deg);
+    -webkit-transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+    -o-transform: rotate(35deg);
+}
+
+#star:before {
+    height: 0;
+    width: 0;
+    position: absolute;
+    display: block;
+    top: -45px;
+    left: -65px;
+    border-bottom: 80px solid #fc2e5a;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    content: '';
+    -webkit-transform: rotate(-35deg);
+    -moz-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    -o-transform: rotate(-35deg);
+}
+
+#star:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    display: block;
+    top: 3px;
+    left: -105px;
+    color: #fc2e5a;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid #fc2e5a;
+    border-left: 100px solid transparent;
+    -webkit-transform: rotate(-70deg);
+    -moz-transform: rotate(-70deg);
+    -ms-transform: rotate(-70deg);
+    -o-transform: rotate(-70deg);
+}
+
+/*
+心形
+心形的制作是非常复杂的，可以使用伪元素来制作，分别将伪元素旋转不同的角度，并修改transform-origin属性来元素的旋转中心点。
+*/
+#heart {
+    position: relative;
+}
+
+#heart:before,#heart:after {
+    content: "";
+    width: 70px;
+    height: 115px;
+    position: absolute;
+    background: red;
+    left: 70px;
+    top: 0;
+    -webkit-border-radius: 50px 50px 0 0;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+}
+
+#heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+
+/*
+蛋形
+蛋形时椭圆形的一个变体，它的高度要比宽度稍大，并且设置正确的border-radius属性即可以制作出一个蛋形。
+*/
+#egg {
+    width: 136px;
+    height: 190px;
+    background: #ffc000;
+    display: block;
+    -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}

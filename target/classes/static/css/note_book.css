@@ -1,0 +1,78 @@
+.head_table{
+    position: relative;
+    margin-top: 20px;
+}
+
+.next_table{
+    position: relative;
+    margin-top: -400px;
+}
+
+.triangle_left {
+    width: 0;
+    height: 0;
+    border-top: 100px solid transparent;
+    border-right: 80px solid #c7c7bc;
+    border-bottom: 100px solid transparent;
+
+    position: relative;
+    left: 20px;
+}
+
+.large_rectangle {
+    width: 2420px;
+    height: 200px;
+    background: #c7c7bc;
+
+    position: relative;
+    top: -200px;
+    left: 100px;
+
+    border-radius: 0 10px 10px 0;
+
+}
+
+.mid_rectangle {
+    width: 2400px;
+    height: 180px;
+    background: #f5f5f5;
+
+    position: relative;
+    top: -420px;
+    left: 110px;
+
+    border-radius: 10px;
+}
+
+.small_circle {
+    width: 26px;
+    height: 26px;
+    background: white;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 13px;
+
+    position: relative;
+    top: -523px;
+    left: 60px;
+}
+
+.n_title_property{
+    font-family: Bahnschrift, serif;
+    font-size: 30px;
+    position: relative;
+    left: 8px;
+    top: 8px;
+}
+
+.n_des_property{
+    position: relative;
+    left: 16px;
+    top: -10px;
+}
+
+.n_link_property{
+    position: relative;
+    left: 2340px;
+    top: 30px;
+}

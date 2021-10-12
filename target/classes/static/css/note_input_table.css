@@ -1,0 +1,21 @@
+#save_button{
+    position: absolute;
+    top: 480px;
+}
+
+.input_form{
+    position: relative;
+
+    width: 100%;
+
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+#text{
+    height: 700px;
+    overflow: hidden;
+    overflow-y: auto;
+}

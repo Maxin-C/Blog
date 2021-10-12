@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="mywebfinal.demo.mapper.UserMapper">
+
+    <select id="listUser" resultType="User">
+        select * from users;
+    </select>
+
+    <insert id="addUser" parameterType="mywebfinal.demo.domain.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO `users`
+        (`uname`, `psw`)
+        VALUES
+        (#{uname}, #{psw})
+    </insert>
+
+    <select id="checkUser" resultType="mywebfinal.demo.domain.User" parameterType="mywebfinal.demo.domain.User">
+        select * from users where uname = #{uname};
+    </select>
+</mapper>
